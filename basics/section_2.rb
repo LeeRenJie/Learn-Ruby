@@ -109,7 +109,7 @@ puts "The number of alphabets of your name is #{fullname.length - 1}"
 
 #Calculator program
 puts "Simple Calculator"
-25.times {print "-"} 
+25.times { print "-" } 
 puts "\nEnter your first number"
 first_number = gets.chomp.to_f
 puts "Enter your second number"
@@ -127,4 +127,4 @@ end
 
 puts multiply(1,2)
 
-#16~ 
+#16~
