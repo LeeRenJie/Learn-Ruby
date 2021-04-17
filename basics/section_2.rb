@@ -105,15 +105,15 @@ lname = gets.chomp
 fullname = fname + " " + lname
 puts "Your full name is #{fullname}"
 puts "Your reversed name is #{fullname.reverse}"
-puts "The number of characters of your name is #{fullname.length - 1}"
+puts "The number of alphabets of your name is #{fullname.length - 1}"
 
 #Calculator program
-puts"Simple Calculator"
-25.times {print"-"} 
+puts "Simple Calculator"
+25.times {print "-"} 
 puts "\nEnter your first number"
-first_number=gets.chomp.to_f
+first_number = gets.chomp.to_f
 puts "Enter your second number"
-second_number=gets.chomp.to_f
+second_number = gets.chomp.to_f
 puts "The multiplication of both number is #{first_number * second_number}"
 puts "The division of both number is #{first_number / second_number}"
 puts "The addition of both number is #{first_number + second_number}"
@@ -126,6 +126,5 @@ def multiply(first_num, second_num)
 end
 
 puts multiply(1,2)
- 
 
-#16~
+#16~ 
