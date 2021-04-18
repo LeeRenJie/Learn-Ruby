@@ -127,4 +127,122 @@ end
 
 puts multiply(1,2)
 
-#16~
+# 24 ~ 27
+# Branching if/else/elseif/end
+condition = true
+another_condition = false
+if (condition || another_condition)
+  puts "Condition True"
+else 
+  puts "Condition False"
+end
+
+#elsif 
+name = "Jack"
+if name == "lee"
+  puts "Hi lee"
+elsif name == "Jack"
+  puts "Hi Jack"
+else
+  puts "Hi everyone"
+end
+
+#Calculator with if/else
+puts "Simple Calculator"
+25.times { print"-" } 
+puts "\nEnter your first number"
+first_number = gets.chomp.to_f
+puts "Enter your second number"
+second_number = gets.chomp.to_f
+puts "Enter 1 to multiply, 2 to divide, 3 to add, 4 to subtract, and 5 to find remainder"
+choice = gets.chomp
+puts "You selected #{choice}"
+if choice == '1'
+  puts "Both number multiplied is #{first_number * second_number}"
+elsif choice == '2'
+  puts "Both number divided is #{first_number / second_number}"
+elsif choice == '3'
+  puts "Both number added is #{first_number * second_number}"
+elsif choice == '4'
+  puts "Both number subtracted is #{first_number - second_number}"
+elsif choice == '5'
+  puts "Remainder is #{first_number % second_number}"
+else
+  puts "Invalid input. Please enter 1 to 5"
+end
+
+## Arrays and iterators
+y = [1,2,3,4,5]
+# print last item in array
+puts y.last
+
+# Create a range of numbers
+x = 1..10
+puts x.class
+
+# convert the range to array
+new_array = x.to_a
+puts new_array
+
+# Shuffle the array
+print new_array.shuffle
+
+# A range of letters to array
+alphabets = "a".."z"
+print alphabets.to_a.shuffle
+
+# Add to end 
+new_array << 11
+print new_array
+print new_array.append(11)
+puts
+
+# Add to front
+print new_array.unshift(11)
+puts
+
+# Remove duplicate
+print new_array.uniq
+puts
+
+#check if item is in array
+puts new_array.include?(10)
+
+#push and pop
+new_array.push("new item")
+print new_array
+popped_item = new_array.pop
+puts popped_item
+print new_array
+
+# .join takes all the items in the array and turns it into a string
+joined_array = new_array.join
+print joined_array
+
+#Add a dash in the middle of the joined array
+dashed_join = new_array.join("-")
+print dashed_join
+
+# split the items into an array
+print dashed_join.split("-")
+
+#Iterators /loop
+#for loop
+array_loop = [1, 2, 3, 4, 5]
+for i in array_loop
+  puts i
+end
+
+#.each method
+array_loop.each do |rand_name|
+  puts rand_name 
+end
+
+# or
+
+array_loop.each { |random_var| print random_var }
+
+#.select
+z = (1..100).to_a.shuffle
+print z.select { |number| number.odd? }
+
