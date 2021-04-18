@@ -138,7 +138,7 @@ else
 end
 
 #elsif 
-name= "Jack"
+name = "Jack"
 if name == "lee"
   puts "Hi lee"
 elsif name == "Jack"
@@ -234,7 +234,7 @@ for i in array_loop
 end
 
 #.each method
-array_loop.each do|rand_name|
+array_loop.each do |rand_name|
   puts rand_name 
 end
 
@@ -245,3 +245,4 @@ array_loop.each { |random_var| print random_var }
 #.select
 z = (1..100).to_a.shuffle
 print z.select { |number| number.odd? }
+
