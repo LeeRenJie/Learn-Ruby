@@ -246,3 +246,86 @@ array_loop.each { |random_var| print random_var }
 z = (1..100).to_a.shuffle
 print z.select { |number| number.odd? }
 
+
+# 28 ~ 41
+# Hashes/dictionary
+
+#Key value pair
+sample_hash = { "a" => 1, "b" => 2, "c" => 3 }
+
+#Access the value in the hash using the key
+print sample_hash["a"]
+
+# Using symbols as identifiers/keys (data that wont change)
+
+symbol_hash = { a: 1, b: 2, c: 3 }
+# it wil become { :a => 1, :b => 2, :c => 3 }
+print symbol_hash[:a]
+
+# To find keys
+print sample_hash.keys
+
+#To find values
+print sample_hash.values
+
+# Looping 
+sample_hash.each do |key, value|
+  puts "The class for key is #{key.class} and the value is #{value.class}"
+end
+
+#or
+
+sample_hash.each { |key, value| puts "The key is #{key} and the value is #{value}" }
+
+# Adding key value pair into hash
+symbol_hash[:d] = "Hello"
+print symbol_hash
+
+# change value with the key
+symbol_hash[:d] = "Bye"
+print symbol_hash
+
+# conditional. Returns values that is a string
+print symbol_hash.select { |key, value| value.is_a?(String) }
+
+# Delete the key if values if value is a string. No key = no value
+symbol_hash.each { |key, value| symbol_hash.delete(key) if value.is_a?(String) }
+print symbol_hash
+
+
+# 42 ~
+# Object oriented programming
+#  Definition
+#Object-oriented programming (OOP) is a programming paradigm that uses objects and their interactions to design and program applications.
+puts
+
+# Class
+class Student 
+  attr_accessor :first_name, :last_name, :email, :username, :password 
+
+  def initialize(firstname, lastname, username, email, password)
+    @first_name = firstname
+    @last_name = lastname
+    @email = email
+    @username = username
+    @password = password
+  end
+
+  def to_s
+    "First name: #{@first_name}\nLast name: #{@last_name}\nUsername: #{@username}\nEmail address: #{@email} "
+  end 
+
+end
+
+lee = Student.new("Lee", "RJ", "lrj", "rj.email.com", "lrj123")
+john = Student.new("John", "Lim", "John1", "John@email.com", "john123")
+
+puts lee
+puts
+puts john
+puts
+# Object interactions
+lee.last_name = john.last_name
+puts "lee's last name is altered"
+puts lee
+
