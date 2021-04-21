@@ -256,7 +256,7 @@ sample_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #Access the value in the hash using the key
 print sample_hash["a"]
 
-# Using symbols as identifiers/keys (data that wont change)
+# Using symbols as identifiers/keys
 
 symbol_hash = { a: 1, b: 2, c: 3 }
 # it wil become { :a => 1, :b => 2, :c => 3 }
