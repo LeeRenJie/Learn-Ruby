@@ -9,7 +9,7 @@ dial_book = {
   "evanston" => "847",
   "orlando" => "407",
   "lancaster" => "717",
-  }
+}
   
 # Get city name from the hash
 def get_city_names(dial_book)
@@ -18,7 +18,7 @@ end
 
 # Get area code based on given hash and key
 def get_area_code(dial_book, key)
-    return "The area code of #{key} is #{dial_book[key]}"
+  return "The area code of #{key} is #{dial_book[key]}"
 end
 
 #Execution flow

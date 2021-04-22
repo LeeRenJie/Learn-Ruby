@@ -3,11 +3,11 @@
 require_relative 'crud'
 
 users = [
-    {username: "ali", password: "password1"},
-    {username: "abu", password: "password2"},
-    {username: "lee", password: "password3"},
-    {username: "jim", password: "password4"},
-    {username: "tim", password: "password5"},
+  {username: "ali", password: "password1"},
+  {username: "abu", password: "password2"},
+  {username: "lee", password: "password3"},
+  {username: "jim", password: "password4"},
+  {username: "tim", password: "password5"},
 ]
 
 # print out the hashes containing hashed password using methods from the module

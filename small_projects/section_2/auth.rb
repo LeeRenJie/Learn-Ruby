@@ -4,7 +4,7 @@ user = [
   {username: "lee", password: "password3"},
   {username: "jim", password: "password4"},
   {username: "tim", password: "password5"},
-  ]
+]
   
 def auth_user(username, password, list_of_users)
   # loop through the list of users
