@@ -20,7 +20,7 @@ root 'pages#home'
 rails server
 
 # You can also type:
-rails s 
+rails s
 # for short. Once the server starts you can open up a browser window and type in localhost:3000 to preview the app. If you are using AWS cloud9, please use the videos in section 14 where previewing the applications are covered (after creating new rails apps using rails 5 and 6) since the preview link differs (it won't be localhost:3000).
 
 # Back to the app, in order for the code to work there will need to be a pages controller and a home action within it.
@@ -53,5 +53,4 @@ Hello World!
 # Once you save this file and preview it from the browser, it should still say Hello World! as expected.
 
 # Cosngratulations, you have made your Rails application say 'Hello World!'
-
 
