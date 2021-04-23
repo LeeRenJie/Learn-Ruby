@@ -37,3 +37,4 @@ loop do
     puts "You entered an invalid city name!"
   end
 end
+

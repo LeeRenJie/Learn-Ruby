@@ -22,3 +22,4 @@ password = gets.chomp
 
 # authenticate user based on the users array, if correct will return the hash, enter password in string form and it will be hashed an compared with its hashed form
 puts Crud.authenticate_user(username, password, hashed_users)
+

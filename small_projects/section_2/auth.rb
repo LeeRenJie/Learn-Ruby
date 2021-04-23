@@ -5,11 +5,11 @@ user = [
   {username: "jim", password: "password4"},
   {username: "tim", password: "password5"},
 ]
-  
+
 def auth_user(username, password, list_of_users)
   # loop through the list of users
   list_of_users.each do |user_record|
-    # check if the username and password is the right one  
+    # check if the username and password is the right one
     if user_record[:username] == username && user_record[:password] == password
       # returns the key value pairs of the specific record
       return user_record
@@ -18,13 +18,13 @@ def auth_user(username, password, list_of_users)
   # if it looped through and couldn't find any similiar
   "Credential were not correct"
 end
-  
+
 puts "Welcome to the authenticator"
 30.times { print "-" }
 puts
 puts "This program will take input from the user and compare password"
 puts "If password is correct, you will get back the user object"
-  
+
 attempts = 1
 
 while attempts < 4
@@ -49,3 +49,4 @@ end
 
 # Notify user when attempts = 4
 puts "You have exceeded the number of attempts!"
+
