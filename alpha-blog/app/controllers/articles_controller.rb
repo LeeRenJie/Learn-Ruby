@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
+  # run set_article for show edit update and destroy only
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def show
-    # byebug
-    @article = Article.find(params[:id])
   end
 
   def index
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(articles_params)
     if @article.save
       flash[:notice] = "Article was created succesfully."
       #Redirect to the newly created article page
@@ -25,12 +25,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(articles_params)
       flash[:notice] = "Article was updated succesfully."
       redirect_to @article
     else
@@ -39,9 +37,20 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to @article
+  end
+
+  # make set_article scoped to this controller
+  private
+
+  #repeated command
+  def set_article
+  @article = Article.find(params[:id])
+  end
+
+  def articles_params
+  params.require(:article).permit(:title, :description)
   end
 
 end
