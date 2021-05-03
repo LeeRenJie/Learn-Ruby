@@ -46,11 +46,12 @@ class ArticlesController < ApplicationController
 
   #repeated command
   def set_article
-  @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def articles_params
-  params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description)
   end
 
 end
+

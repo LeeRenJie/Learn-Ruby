@@ -1,9 +1,11 @@
 <% if @article.errors.any? %>
-  <h2>The following erros prevented the article from being saved</h2>
+  <h2>The following errors prevented the article from being saved</h2>
   <ul>
-  <% @article.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li>
+        <%= msg %>
+      </li>
+    <% end %>
   </ul>
 <% end %>
 
@@ -23,3 +25,4 @@
     <%= f.submit %>
   </p>
 <% end %>
+
