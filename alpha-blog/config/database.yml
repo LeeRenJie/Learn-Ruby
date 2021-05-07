@@ -21,7 +21,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: leerenjie
 
 development:
   adapter: sqlite3
@@ -86,5 +85,3 @@ test:
 production:
   <<: *default
   database: alpha_blog_production
-  username: alpha_blog
-  password: <%= ENV['ALPHA_BLOG_DATABASE_PASSWORD'] %>
