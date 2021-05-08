@@ -1,11 +1,11 @@
-@import 'bootstrap/dist/css/bootstrap';
+@use 'bootstrap/dist/css/bootstrap';
 
 html, body {
   height: 100%;
 }
 
 .navbar {
-background-color: #000 !important;
+  background-color: #000 !important;
 }
 
 .nav-link {
@@ -49,3 +49,4 @@ background-color: #000 !important;
 #sticky-footer {
   flex-shrink: none;
 }
+
