@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @articles = @user.articles
   end
 
   def create
