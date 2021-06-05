@@ -22,7 +22,7 @@
               <% if user == current_user %>
                 <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-outline-primary" %>
               <% end %>
-              <% if current_user.admin? %>
+              <% if user == current_user || current_user.admin? %>
                 <%= link_to "Delete User", user_path(user), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure you want to delete the user account and all associated articles?"} %>
               <% end %>
             <% end %>
