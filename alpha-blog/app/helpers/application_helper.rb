@@ -8,5 +8,9 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: user.username, class: "rounded shadow mx-auto d-block")
   end
 
+  def alert_css_class(name)
+    name == "notice" ? "alert-success" : "alert-danger"
+  end
+
 end
 
