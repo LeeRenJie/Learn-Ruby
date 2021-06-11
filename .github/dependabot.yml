@@ -16,7 +16,7 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "bundler" # See documentation for possible values
-    directory: "/test-app" # Location of package manifests
+    directory: "/alpha-blog" # Location of package manifests
     schedule:
       interval: "daily"
 
