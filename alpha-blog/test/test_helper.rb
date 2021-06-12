@@ -14,3 +14,4 @@ class ActiveSupport::TestCase
     post login_path, params: { session: {email: user.email, password: "john"}}
   end
 end
+
