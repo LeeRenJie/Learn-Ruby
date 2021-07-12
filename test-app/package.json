@@ -6,7 +6,7 @@
     "@rails/activestorage": "^6.1.4",
     "@rails/ujs": "^6.1.4",
     "turbolinks": "^5.2.0",
-    "ws": "^7.5.2"
+    "ws": "^7.5.3"
   },
   "version": "0.1.0",
   "devDependencies": {
