@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2021_07_03_133125) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "parent_id"
-    t.index ["parent_id"], name: "index_users_on_parent_id"
+    t.integer "mother_id"
+    t.integer "father_id"
+    t.index ["father_id"], name: "index_users_on_father_id"
+    t.index ["mother_id"], name: "index_users_on_mother_id"
   end
 
 end
