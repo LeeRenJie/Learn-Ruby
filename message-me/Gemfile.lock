@@ -158,6 +158,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    semantic-ui-sass (2.4.4.0)
+      sassc
     semantic_range (3.0.0)
     spring (2.1.1)
     sprockets (4.0.2)
@@ -210,6 +212,7 @@ DEPENDENCIES
   rails (~> 6.1.4)
   sass-rails (>= 6)
   selenium-webdriver
+  semantic-ui-sass
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
