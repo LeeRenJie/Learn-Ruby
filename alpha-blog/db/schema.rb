@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2021_06_13_121551) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
+    t.string "title", null: false
+    t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2021_06_13_121551) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
+    t.string "username", null: false
+    t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
