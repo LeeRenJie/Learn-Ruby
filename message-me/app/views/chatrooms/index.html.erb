@@ -1,6 +1,6 @@
 <h4 class="ui center aligned medium icon header">
   <i class="orange circular coffee icon"></i>
-  Say Something
+  <span>Say Something</span>
 </h4>
 
 <div class="ui two column grid">
@@ -39,14 +39,14 @@
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_with class: 'ui reply form' do |form| %>
           <div class="field">
             <div class="ui fluid icon input">
               <i class="bordered inverted orange edit icon"></i>
-              <input type="text" placeholder="Enter a message...">
+              <%= form.text_field :attr, placeholder: "Enter a message..." %>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
