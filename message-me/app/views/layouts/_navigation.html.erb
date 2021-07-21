@@ -1,20 +1,18 @@
-<a href="" class="item">
-  Chatroom
-</a>
-<a href="" class="item">
-  Messages
-</a>
+<%= link_to 'Chatroom', root_path, class: "item" %>
+<%= link_to 'Messages', root_path, class: "item" %>
 <div class="right menu">
   <div class="ui dropdown item">
     Account
     <i class="dropdown icon"></i>
     <div class="menu">
       <a href="" class="item">Log out</a>
-      <a href="" class="item">Log in</a>
-      <a href="" class="item">Sign Up</a>
+      <%#= link_to 'Log out', logout_path class: "item" %>
+      <%= link_to 'Log in', login_path, class: "item" %>
     </div>
   </div>
   <div class="item">
-    <div class="ui primary button">Sign Up</div>
+    <div class="ui primary button">
+      <%= link_to 'Sign Up', login_path, class: "no-color" %>
+    </div>
   </div>
 </div>
