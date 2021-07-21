@@ -1,29 +1,29 @@
 <h1 class="ui header center aligned">Welcome to MessageMe - a complete Chat App</h1>
 <h4 class="ui center aligned medium icon header">
   <i class="orange circular power off icon"></i>
-  Log in to continue
+  <span>Log in to continue</span>
 </h4>
 
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
-      <div class="ui form">
+      <%= form_with class: 'ui form' do |form| %>
         <div class="field">
-          <label>Username</label>
+          <%= form.label "Username" %>
           <div class="ui left icon input">
-            <input type="text" placeholder="Username">
+            <%= form.text_field :attr, placeholder: "Username" %>
             <i class="user icon"></i>
           </div>
         </div>
         <div class="field">
-          <label>Password</label>
+          <%= form.label "Password" %>
           <div class="ui left icon input">
-            <input type="password" placeholder="Password">
+            <%= form.password_field :attr, placeholder: "Password" %>
             <i class="lock icon"></i>
           </div>
         </div>
         <div class="ui orange submit button">Login</div>
-      </div>
+      <% end %>
     </div>
     <div class="middle aligned column">
       <div class="ui orange disabled big button">
