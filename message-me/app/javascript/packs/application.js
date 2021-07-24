@@ -12,9 +12,9 @@ import '@doabit/semantic-ui-sass'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-$(document).on('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', () => {
   $('.ui.dropdown').dropdown();
-  $('.message .close').on('click', function() {
+  $('.message .close').on('click', () =>{
     $(this).closest('.message').transition('fade');
   });
 })
