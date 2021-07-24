@@ -1,6 +1,5 @@
 class ChatroomsController < ApplicationController
-  before_action :require_user
-
+  before_action :validate_user_logged_in
   def index
     @messages = Message.all
   end

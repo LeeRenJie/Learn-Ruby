@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :logged_in_redirect, only: [:new, :create]
+  before_action :logged_in_redirect, if: :logged_in?, only: [:new, :create]
 
   def new
   end
@@ -25,9 +25,7 @@ class SessionsController < ApplicationController
   private
 
   def logged_in_redirect
-    if logged_in?
-      flash[:error] = "You are already logged in"
-      redirect_to root_path
-    end
+    flash[:error] = "You are already logged in"
+    redirect_to root_path
   end
 end
