@@ -12,11 +12,11 @@
         </div>
       </div>
       <div class="extra content">
-        <%= form_with class: 'ui reply form' do |form| %>
+        <%= form_with scope: :message, url: message_path, class: 'ui reply form' do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
-              <i class="bordered inverted orange edit icon"></i>
-              <%= form.text_field :attr, placeholder: "Enter a message..." %>
+              <%= f.text_field :body, placeholder: "Enter a message..." %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
             </div>
           </div>
         <% end %>
