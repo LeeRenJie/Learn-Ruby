@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def require_user
+  def validate_user_logged_in
     unless logged_in?
       flash[:error] = "You must be logged in to perform that action"
       redirect_to login_path
