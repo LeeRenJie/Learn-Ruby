@@ -14,4 +14,7 @@ Turbolinks.start()
 ActiveStorage.start()
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
-})
+  $('.message').click(function() {
+    $(this).transition('fade');
+  });
+});
