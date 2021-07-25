@@ -15,8 +15,8 @@ ActiveStorage.start()
 
 window.scroll_bottom = function(id) {
   const element = $(`#${id}`)
+  if (element.length > 0){
   const scrollHeight = element[0].scrollHeight;
-  if (id.length > 0){
     element.scrollTop(scrollHeight);
   }
 };
