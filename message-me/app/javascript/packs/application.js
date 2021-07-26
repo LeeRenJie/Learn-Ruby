@@ -16,9 +16,20 @@ ActiveStorage.start()
 window.scroll_bottom = function(id) {
   const element = $(`#${id}`)
   if (element.length > 0){
-  const scrollHeight = element[0].scrollHeight;
+    console.log("Hi")
+    const scrollHeight = element[0].scrollHeight;
     element.scrollTop(scrollHeight);
   }
+};
+
+function clear_input() {
+  const input = $('#messages_body')
+  input.keydown(function(e) {
+    if (e.keyCode == 13) {
+      $('button').click();
+      input.val('');
+    };
+  });
 };
 
 $(document).on('turbolinks:load', function() {
@@ -27,4 +38,5 @@ $(document).on('turbolinks:load', function() {
     $(this).transition('fade');
   });
   scroll_bottom('messages');
+  clear_input();
 });
