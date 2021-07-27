@@ -16,7 +16,6 @@ ActiveStorage.start()
 window.scroll_bottom = function(id) {
   const element = $(`#${id}`)
   if (element.length > 0){
-    console.log("Hi")
     const scrollHeight = element[0].scrollHeight;
     element.scrollTop(scrollHeight);
   }
@@ -27,7 +26,8 @@ function clear_input() {
   input.keydown(function(e) {
     if (e.keyCode == 13) {
       $('button').click();
-      input.val('');
+      e.preventDefault()
+      e.target.value = "";
     };
   });
 };
