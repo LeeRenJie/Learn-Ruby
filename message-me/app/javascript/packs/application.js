@@ -25,7 +25,7 @@ function clearInput() {
   const input = $('#messages_body')
   input.keydown(function(e) {
     if (e.keyCode == 13) {
-      $('button').click();
+      (this).form.submit()
       e.preventDefault()
       e.target.value = "";
     };
