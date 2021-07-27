@@ -1,1 +1,44 @@
-this is index.html.erb for chatroom
+<h4 class="ui center aligned medium icon header">
+  <i class="orange circular coffee icon"></i>
+  <span>Say Something</span>
+</h4>
+
+<div class="ui two column grid">
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content" id="messages">
+        <div class="ui feed" id="message-container">
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_with scope: :messages, class: 'ui reply form', url: messages_path, method: "POST", remote: true do |f| %>
+          <div class="field">
+            <div class="ui fluid icon input">
+              <%= f.text_field :body, placeholder: "Enter a message..." %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="four wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui inverted vertical menu">
+          <a href="" class="active item">
+            Users Online
+          </a>
+          <a href="" class="item">
+            Messages
+          </a>
+          <a href="" class="item">
+            Friends
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
