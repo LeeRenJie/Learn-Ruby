@@ -13,7 +13,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-window.scroll_bottom = function(id) {
+window.scrollBottom = function(id) {
   const element = $(`#${id}`)
   if (element.length > 0){
     const scrollHeight = element[0].scrollHeight;
@@ -21,7 +21,7 @@ window.scroll_bottom = function(id) {
   }
 };
 
-function clear_input() {
+function clearInput() {
   const input = $('#messages_body')
   input.keydown(function(e) {
     if (e.keyCode == 13) {
@@ -37,6 +37,6 @@ $(document).on('turbolinks:load', function() {
   $('.message').click(function() {
     $(this).transition('fade');
   });
-  scroll_bottom('messages');
-  clear_input();
+  scrollBottom('messages');
+  clearInput();
 });
