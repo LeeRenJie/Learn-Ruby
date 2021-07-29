@@ -5,9 +5,14 @@ class User < ApplicationRecord
   -> (user) { unscope(:where).where("father_id = :id OR mother_id = :id", id: user.id) },
    class_name: "User"
 
-   has_many :grandchildren,
-  -> (user) { unscope(:where).where("father_id IN (:ids) OR mother_id IN (:ids)", ids: user.children.ids) },
-  class_name: "User"
+  def grandchildren
+    user_id = self.id
+
+    User.where(
+      "father_id IN (:ids) OR mother_id IN (:ids)",
+      ids: User.where("father_id = :id OR mother_id = :id", id: user_id).pluck(:id)
+    )
+  end
 
   belongs_to :mother, class_name: "User", optional: true
   belongs_to :father, class_name: "User", optional: true
