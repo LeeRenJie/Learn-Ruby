@@ -66,6 +66,6 @@ Rails.application.configure do
 
   config.action_cable.allowed_request_origins = [
     # Local address we use for our standalone client
-    '/home/leerenjie/workspace/Learn-Ruby/test-websocket/app/frontend/',
+    '/home/leerenjie/workspace/Learn-Ruby/test-websocket/frontend',
 ]
 end
