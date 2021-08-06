@@ -109,6 +109,8 @@ GEM
     faraday_middleware (1.1.0)
       faraday (~> 1.0)
     ffi (1.15.3)
+    font-awesome-rails (4.7.0.7)
+      railties (>= 3.2, < 7)
     globalid (0.5.1)
       activesupport (>= 5.0)
     hashie (4.1.0)
@@ -253,6 +255,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-bootstrap-views
+  font-awesome-rails
   iex-ruby-client
   jbuilder (~> 2.7)
   listen (~> 3.3)
