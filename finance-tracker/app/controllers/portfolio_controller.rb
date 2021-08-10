@@ -1,4 +1,4 @@
 class PortfolioController < ApplicationController
-  def my_portfolio
+  def index
   end
 end
