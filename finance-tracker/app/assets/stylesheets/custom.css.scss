@@ -1,1 +1,17 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+.search-area {
+  padding-top: 50px;
+}
+
+.no-right-padding {
+  padding-right: 0;
+}
+
+.no-left-padding {
+  padding-left: 0;
+}
+
+.results-block {
+  display: inline-block;
+}
