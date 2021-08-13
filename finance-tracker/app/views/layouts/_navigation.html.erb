@@ -10,6 +10,9 @@
           <li class="nav-item <%= 'active' if request.path == portfolio_index_path %>">
            <%= link_to('Portfolio', portfolio_index_path, class: "nav-link") %>
           </li>
+          <li class="nav-item <%= 'active' if request.path == friends_path %>">
+            <%= link_to 'Friends', friends_path, class: 'nav-link' %>
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown user-name">
