@@ -18,6 +18,6 @@ class Stock < ApplicationRecord
   end
 
   def self.check_db(ticker_symbol)
-    where(ticker: ticker_symbol).first
+    find_by(ticker: ticker_symbol)
   end
 end
