@@ -16,8 +16,4 @@ class Stock < ApplicationRecord
       return nil
     end
   end
-
-  def self.check_db(ticker_symbol)
-    find_by(ticker: ticker_symbol)
-  end
 end
