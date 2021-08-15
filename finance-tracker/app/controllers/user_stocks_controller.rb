@@ -5,10 +5,10 @@ class UserStocksController < ApplicationController
       stock = Stock.new_lookup(params[:ticker])
       stock.save
     end
-    begin
+    if stock.save
       stock.users << current_user
       flash[:notice] = "Stock #{stock.name} was successfully added to your portfolio"
-    rescue
+    else
       flash[:notice] = "Stock #{params[:ticker]} could not be added to your portfolio"
     end
     redirect_to portfolio_index_path
