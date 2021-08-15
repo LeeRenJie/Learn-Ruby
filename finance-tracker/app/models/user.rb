@@ -19,7 +19,6 @@ class User < ApplicationRecord
   end
 
   def full_name
-    return "#{first_name} #{last_name}" if first_name || last_name
-    "Anonymous"
+    (first_name || last_name) ? "#{first_name} #{last_name}" : "Anonymous"
   end
 end
