@@ -1,7 +1,7 @@
 class UserStocksController < ApplicationController
   def create
     stock = Stock.find_by(ticker: (params[:ticker]))
-    if stock.blank? || !current_user.stocks.exists?(stock.id)
+    if stock.blank? || !current_user.stocks.exists?(params[:ticker])
       stock = Stock.new_lookup(params[:ticker])
       if stock.save
         stock.users << current_user
