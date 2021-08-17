@@ -14,7 +14,7 @@
         You are already tracking
         <% if current_user.stock_already_tracked?(@stock.ticker) %>
           this stock
-        <% else !current_user.under_stock_limit? %>
+        <% elsif !current_user.under_stock_limit? %>
           10 stocks
         <% end %>
       </span>
