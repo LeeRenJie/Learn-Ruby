@@ -12,4 +12,12 @@ class UserStocksController < ApplicationController
     end
     redirect_to portfolio_index_path
   end
+
+  def destroy
+    user_stock =  current_user.user_stocks.find(params[:id])
+    user_stock.destroy
+    flash[:notice] = "Stock #{user_stock.stock.ticker} was successfully removed from your portfolio"
+    redirect_to portfolio_index_path
+  end
 end
+
