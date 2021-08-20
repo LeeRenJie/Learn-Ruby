@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :user_stocks, only: [:create, :destroy]
   resources :portfolio, only: [:index]
+  resources :friends, only: [:index, :destroy]
   resources :stocks, only: [:index]
 end
