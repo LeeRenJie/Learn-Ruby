@@ -1,5 +1,5 @@
 <h1>Friends</h1>
 
-<% if !@friends.empty? %>
+<% if @friends.present? %>
   <%= render 'friends/list' %>
 <% end %>
