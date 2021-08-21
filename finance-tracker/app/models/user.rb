@@ -52,6 +52,6 @@ class User < ApplicationRecord
   end
 
   def not_friends_with?(friend_id)
-    !self.friends.where(id: friend_id).exists?
+    !self.friends.exists?(id: friend_id)
   end
 end
