@@ -17,7 +17,7 @@
             <td>
               <%= link_to "View Profile", '#', class: "btn btn-sm btn-success ml-3" %>
               <% if current_user.not_friends_with?(friend.id) %>
-                <%= link_to 'Follow Friend', '#', class: "btn btn-sm btn-success", method: :post %>
+                <%= link_to 'Follow Friend', friendships_path(friend: friend), class: "btn btn-sm btn-success", method: :post %>
               <% else %>
                 <span class="badge badge-secondary">
                   You are already friends
