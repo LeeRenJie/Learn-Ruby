@@ -1,5 +1,6 @@
 class Api::V1::TodosController < ApplicationController
   before_action :set_todo, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /todos or /todos.json
   def index
