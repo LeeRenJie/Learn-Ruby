@@ -19,7 +19,7 @@ class TodoForm extends Component {
   }
 
   async formSubmit(formData) {
-    var data = new FormData(formData);
+    let data = new FormData(formData);
     await fetch(this.state.api_url, {
       method: 'POST',
       mode: 'cors',
