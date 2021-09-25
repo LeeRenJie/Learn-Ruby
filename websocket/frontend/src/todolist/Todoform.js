@@ -8,14 +8,14 @@ class TodoForm extends Component {
     this.state = {
       api_url: props.api_url,
       task: "",
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTaskChange = this.handleTaskChange.bind(this);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.formSubmit(event.target)
+    this.formSubmit(event.target);
   }
 
   async formSubmit(formData) {
@@ -25,14 +25,14 @@ class TodoForm extends Component {
       mode: 'cors',
       body: data,
     }).then(response => response.json())
-    .then(response => this.props.updateTodoList(response))
-  }
+    .then(response => this.props.updateTodoList(response));
+  };
 
   handleTaskChange(event) {
     this.setState({
       task: event.target.value,
     });
-  }
+  };
 
   render() {
     return (
@@ -54,7 +54,7 @@ class TodoForm extends Component {
         </form>
       </div>
     );
-  }
-}
+  };
+};
 
 export default TodoForm;

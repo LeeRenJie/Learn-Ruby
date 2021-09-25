@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import TodoForm from "./Todoform"
-import TodoItem from "./TodoItem"
+import TodoForm from "./Todoform";
+import TodoItem from "./TodoItem";
 
-const api_url = 'http://localhost:3001/api/v1/todos/'
+const api_url = 'http://localhost:3001/api/v1/todos/';
 
 class TodoList extends Component {
   constructor(props) {
@@ -24,9 +24,9 @@ class TodoList extends Component {
     .then(response_items => {
       this.setState({
         items: response_items.reverse()
-      })
+      });
     });
-  }
+  };
 
   updateTodoList(item) {
     let _items = this.state.items
@@ -34,8 +34,8 @@ class TodoList extends Component {
     _items.unshift(item)
     this.setState({
       items: _items
-    })
-  }
+    });
+  };
 
   render() {
     console.log(this.state.items);
@@ -49,7 +49,7 @@ class TodoList extends Component {
         </ul>
       </div>
     );
-  }
-}
+  };
+};
 
 export default TodoList;
