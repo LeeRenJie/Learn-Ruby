@@ -10,14 +10,14 @@ const useStyles = makeStyles({
     padding: "2em",
     height: "3em",
     margin: "1em"
-}
+  }
 });
 
 export default function TodoItem(props) {
   const classes = useStyles();
   function handleDelete() {
-    props.deleteItem(props.item)
-  }
+    props.deleteItem(props.item);
+  };
   return (
     <Grid container spacing={0}>
       <Grid item xs={9}>
@@ -36,5 +36,5 @@ export default function TodoItem(props) {
         </Paper>
       </Grid>
     </Grid>
-  )
-}
+  );
+};

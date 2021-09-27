@@ -3,7 +3,7 @@ import TodoForm from "./Todoform"
 import TodoItem from "./TodoItem"
 import Grid from '@material-ui/core/Grid';
 
-const api_url = 'http://localhost:3001/api/v1/todos/'
+const apiURL = 'http://localhost:3001/api/v1/todos/';
 
 class TodoList extends Component {
   constructor(props) {
@@ -11,69 +11,69 @@ class TodoList extends Component {
 
     this.state = {
       items: []
-    }
+    };
+
     this.updateTodoList = this.updateTodoList.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.getTasks();
-  }
+  };
 
   getTasks() {
-    fetch(api_url)
+    fetch(apiURL)
     .then(response => response.json())
     .then(response_items => {
       this.setState({
         items: response_items.reverse()
-      })
+      });
     });
-  }
+  };
 
   updateTodoList(item) {
-    let _items = this.state.items
-    // Unshift adds to the beginning of the array
-    _items.unshift(item)
+    let currentItems = this.state.items;
     this.setState({
-      items: _items
-    })
-  }
+      items: [item, ...currentItems]
+    });
+  };
+
   deleteItem(item) {
     // delete the item through API
     // localhost:3001//api/v1/todos + /:id
-    let deleteURL = api_url + `/${item.id}`
+    let deleteURL = apiURL + `/${item.id}`;
     fetch(deleteURL, {
       method: 'DELETE'
     }).then(() => {
       // Client side delete
-      let _items = this.state.items;
-      let index = _items.indexOf(item);
-      _items.splice(index, 1);
+      let currentItems = this.state.items;
+      let index = currentItems.indexOf(item);
+      currentItems.splice(index, 1);
       this.setState({
-        items: _items
-      })
-    })
-  }
+        items: currentItems
+      });
+    });
+  };
 
   render() {
-    console.log(this.state.items);
     return (
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <TodoForm api_url={api_url} updateTodoList={this.updateTodoList}/>
+          <TodoForm apiURL={apiURL} updateTodoList={this.updateTodoList}/>
         </Grid>
-        <Grid item xs={12} id="todo_list">
+        <Grid item xs={12} id="todoList">
           {this.state.items.map((item) => (
             <TodoItem
               key={item.id}
               item={item}
               deleteItem={this.deleteItem}
             />
-          ))}
+            ))
+          }
         </Grid>
       </Grid>
     );
-  }
-}
+  };
+};
 
 export default TodoList;
