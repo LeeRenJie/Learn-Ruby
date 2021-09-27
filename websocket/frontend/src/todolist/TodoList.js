@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TodoForm from "./Todoform";
 import TodoItem from "./TodoItem";
 
-const api_url = 'http://localhost:3001/api/v1/todos/';
+const apiURL = 'http://localhost:3001/api/v1/todos/';
 
 class TodoList extends Component {
   constructor(props) {
@@ -10,16 +10,17 @@ class TodoList extends Component {
 
     this.state = {
       items: []
-    }
+    };
+
     this.updateTodoList = this.updateTodoList.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.getTasks();
-  }
+  };
 
   getTasks() {
-    fetch(api_url)
+    fetch(apiURL)
     .then(response => response.json())
     .then(response_items => {
       this.setState({
@@ -29,23 +30,20 @@ class TodoList extends Component {
   };
 
   updateTodoList(item) {
-    let _items = this.state.items
-    // Unshift adds to the beginning of the array
-    _items.unshift(item)
+    let currentItems = this.state.items;
     this.setState({
-      items: _items
+      items: [item, ...currentItems]
     });
   };
 
   render() {
-    console.log(this.state.items);
     return (
       <div>
-        <TodoForm api_url={api_url} updateTodoList={this.updateTodoList}/>
-        <ul id="todo_list">
+        <TodoForm apiURL={apiURL} updateTodoList={this.updateTodoList}/>
+        <ul id="todoList">
           {this.state.items.map((item) => (
             <TodoItem key={item.id} item={item}/>
-          ))}
+            ))}
         </ul>
       </div>
     );

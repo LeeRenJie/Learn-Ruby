@@ -6,7 +6,7 @@ class TodoForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      api_url: props.api_url,
+      apiURL: props.apiURL,
       task: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,14 +19,15 @@ class TodoForm extends Component {
   }
 
   async formSubmit(formData) {
-    let data = new FormData(formData);
-    await fetch(this.state.api_url, {
+    const data = new FormData(formData);
+    const obj = {
       method: 'POST',
       mode: 'cors',
       body: data,
-    }).then(response => response.json())
-    .then(response => this.props.updateTodoList(response));
-  };
+    };
+    const res = await fetch(this.state.apiURL, obj).then(response => response.json());
+    this.props.updateTodoList(res);
+  }
 
   handleTaskChange(event) {
     this.setState({
@@ -37,20 +38,22 @@ class TodoForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} id="todo_form" autoComplete="off">
+        <form onSubmit={this.handleSubmit} id="todoForm" autoComplete="off">
           <TextField
-          id="task_input"
-          label="Task Description"
-          variant="outlined"
-          type="text"
-          name="todo[task]"
-          onChange={this.handleTaskChange}
+            id="taskInput"
+            label="Task Description"
+            variant="outlined"
+            type="text"
+            name="todo[task]"
+            onChange={this.handleTaskChange}
           />
           <Button
-          variant="contained"
-          type="submit"
-          color="primary"
-          >Add Task</Button>
+            variant="contained"
+            type="submit"
+            color="primary"
+          >
+            Add Task
+          </Button>
         </form>
       </div>
     );
