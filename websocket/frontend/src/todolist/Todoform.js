@@ -25,8 +25,9 @@ class TodoForm extends Component {
       mode: 'cors',
       body: data,
     };
-    const res = await fetch(this.state.apiURL, obj).then(response => response.json());
-    this.props.updateTodoList(res);
+    const res = await fetch(this.state.apiURL, obj)
+    const json = await res.json();
+    this.props.updateTodoList(json);
   }
 
   handleTaskChange(event) {
