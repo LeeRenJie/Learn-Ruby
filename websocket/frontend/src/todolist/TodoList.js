@@ -41,9 +41,14 @@ class TodoList extends Component {
       <div>
         <TodoForm apiURL={apiURL} updateTodoList={this.updateTodoList}/>
         <ul id="todoList">
-          {this.state.items.map((item) => (
-            <TodoItem key={item.id} item={item}/>
-          ))}
+          {
+            this.state.items.map((item) => (
+              <TodoItem
+                key={item.id}
+                item={item}
+              />
+            ))
+          }
         </ul>
       </div>
     );
