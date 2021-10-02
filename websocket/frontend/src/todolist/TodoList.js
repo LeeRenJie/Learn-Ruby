@@ -62,9 +62,15 @@ class TodoList extends Component {
           <TodoForm apiURL={apiURL} updateTodoList={this.updateTodoList}/>
         </Grid>
         <Grid item xs={12} id="todoList">
-          {this.state.items.map((item) => (
-            <TodoItem key={item.id} item={item} deleteItem={this.deleteItem}/>
-          ))}
+          {
+            this.state.items.map((item) => (
+              <TodoItem
+                key={item.id}
+                item={item}
+                deleteItem={this.deleteItem}
+              />
+            ))
+          }
         </Grid>
       </Grid>
     );
