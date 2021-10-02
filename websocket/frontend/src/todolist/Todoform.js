@@ -7,7 +7,6 @@ class TodoForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      apiURL: props.apiURL,
       task: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,16 +18,16 @@ class TodoForm extends Component {
     this.formSubmit(event.target);
   };
 
-  async formSubmit(formData) {
+  formSubmit(formData) {
     const data = new FormData(formData);
     const obj = {
       method: 'POST',
       mode: 'cors',
       body: data,
     };
-    const res = await fetch(this.state.apiURL, obj)
-    const json = await res.json();
-    this.props.updateTodoList(json);
+    fetch(this.props.apiURL, obj)
+    .then(res => res.json())
+    .then(resJson => this.props.updateTodoList(resJson));
   }
 
   handleTaskChange(event) {

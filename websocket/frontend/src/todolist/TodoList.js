@@ -24,15 +24,15 @@ class TodoList extends Component {
   getTasks() {
     fetch(apiURL)
     .then(response => response.json())
-    .then(response_items => {
+    .then(responseItems => {
       this.setState({
-        items: response_items.reverse()
+        items: responseItems.reverse()
       });
     });
   };
 
   updateTodoList(item) {
-    let currentItems = this.state.items;
+    const currentItems = this.state.items;
     this.setState({
       items: [item, ...currentItems]
     });
@@ -63,13 +63,8 @@ class TodoList extends Component {
         </Grid>
         <Grid item xs={12} id="todoList">
           {this.state.items.map((item) => (
-            <TodoItem
-              key={item.id}
-              item={item}
-              deleteItem={this.deleteItem}
-            />
-            ))
-          }
+            <TodoItem key={item.id} item={item} deleteItem={this.deleteItem}/>
+          ))}
         </Grid>
       </Grid>
     );
