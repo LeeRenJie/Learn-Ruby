@@ -43,8 +43,7 @@ class TodoList extends Component {
         <ul id="todoList">
           {this.state.items.map((item) => (
             <TodoItem key={item.id} item={item}/>
-            ))
-          }
+          ))}
         </ul>
       </div>
     );
