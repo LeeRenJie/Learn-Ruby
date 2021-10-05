@@ -8,7 +8,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 const useStyles = makeStyles({
   root: {
     padding: "2em",
-    height: "3em",
+    height: "auto",
     margin: "1em"
   }
 });
@@ -23,6 +23,8 @@ export default function TodoItem(props) {
       <Grid item xs={9}>
         <Paper elevation={3} className={classes.root}>
           {props.item.task}
+          <hr/>
+          {props.item.body}
           <hr/>
           <Button
             variant="contained"
