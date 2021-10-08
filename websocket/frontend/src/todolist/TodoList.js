@@ -23,12 +23,12 @@ class TodoList extends Component {
 
   getTasks() {
     fetch(apiURL)
-    .then(response => response.json())
-    .then(responseItems => {
-      this.setState({
-        items: responseItems.reverse()
+      .then(response => response.json())
+      .then(responseItems => {
+        this.setState({
+          items: responseItems.reverse()
+        });
       });
-    });
   };
 
   updateTodoList(item) {
