@@ -27,9 +27,9 @@ class TodoForm extends Component {
       body: data,
     };
     fetch(this.props.apiURL, obj)
-    .then(res => res.json())
-    .then(resJson => this.props.updateTodoList(resJson));
-  }
+      .then(res => res.json())
+      .then(resJson => this.props.updateTodoList(resJson));
+  };
 
   handleTaskChange(event) {
     this.setState({
