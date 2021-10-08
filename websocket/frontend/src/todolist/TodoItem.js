@@ -4,13 +4,30 @@ import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Typography  from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
     padding: "2em",
-    height: "auto",
-    margin: "1em"
-  }
+    margin: "1em",
+    height: "auto"
+  },
+  divider: {
+    margin: "1em",
+    marginLeft:"37.5%",
+    width: "25%"
+  },
+  paper: {
+    margin: "1em",
+    padding: "2em",
+    textAlign: "justify"
+  },
+  heading: {
+    textAlign: "center"
+  },
+  body: {
+    padding: "1em"
+  },
 });
 
 export default function TodoItem(props) {
@@ -20,12 +37,18 @@ export default function TodoItem(props) {
   };
   return (
     <Grid container spacing={0}>
-      <Grid item xs={9}>
-        <Paper elevation={3} className={classes.root}>
-          {props.item.task}
-          <hr/>
-          {props.item.body}
-          <hr/>
+      <Grid item xs={1}></Grid>
+      <Grid item xs={10}>
+        <Paper elevation={10} className={classes.paper}>
+          <Typography variant="h4" className={classes.heading}>
+            {props.item.task}
+          </Typography>
+          <hr className={classes.divider}/>
+          <div className={classes.body}>
+            <Typography variant="body1">
+              {props.item.body}
+            </Typography>
+          </div>
           <Button
             variant="contained"
             color="secondary"

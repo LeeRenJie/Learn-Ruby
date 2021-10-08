@@ -9,9 +9,11 @@ class TodoForm extends Component {
     super(props);
     this.state = {
       task: "",
+      body: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTaskChange = this.handleTaskChange.bind(this);
+    this.handleBodyChange = this.handleBodyChange.bind(this);
   };
 
   handleSubmit(event) {
@@ -29,6 +31,10 @@ class TodoForm extends Component {
     fetch(this.props.apiURL, obj)
       .then(res => res.json())
       .then(resJson => this.props.updateTodoList(resJson));
+    this.setState({
+      task: "",
+      body: "",
+    });
   };
 
   handleTaskChange(event) {
@@ -36,6 +42,13 @@ class TodoForm extends Component {
       task: event.target.value,
     });
   };
+
+  handleBodyChange(event) {
+    this.setState({
+      body: event.target.value,
+    });
+  };
+
 
   render() {
     return (
@@ -51,6 +64,7 @@ class TodoForm extends Component {
                   variant="outlined"
                   type="text"
                   name="todo[task]"
+                  value={this.state.task}
                   onChange={this.handleTaskChange}
                   fullWidth
                 />
@@ -62,9 +76,11 @@ class TodoForm extends Component {
                   variant="outlined"
                   type="text"
                   name="todo[body]"
+                  value={this.state.body}
                   style={{"width": "99.5%", borderRadius: "5px"}}
                   rowsMin={3}
                   placeholder="Describe Todo Item"
+                  onChange={this.handleBodyChange}
                 />
               </Grid>
               <Grid item xs={2}>
