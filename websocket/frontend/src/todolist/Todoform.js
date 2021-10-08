@@ -10,12 +10,12 @@ class TodoForm extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTaskChange = this.handleTaskChange.bind(this);
-  }
+  };
 
   handleSubmit(event) {
     event.preventDefault();
     this.formSubmit(event.target);
-  }
+  };
 
   formSubmit(formData) {
     const data = new FormData(formData);
@@ -25,9 +25,9 @@ class TodoForm extends Component {
       body: data,
     };
     fetch(this.props.apiURL, obj)
-    .then(res => res.json())
-    .then(resJson => this.props.updateTodoList(resJson));
-  }
+      .then(res => res.json())
+      .then(resJson => this.props.updateTodoList(resJson));
+  };
 
   handleTaskChange(event) {
     this.setState({
