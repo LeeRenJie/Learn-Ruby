@@ -4,7 +4,7 @@ class Api::V1::TodosController < ApplicationController
 
   # GET /todos or /todos.json
   def index
-    @todos = Todo.all
+    @todos = Todo.all.reverse
 
     render json: @todos
   end
