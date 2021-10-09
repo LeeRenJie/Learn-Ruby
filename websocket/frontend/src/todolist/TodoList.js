@@ -41,13 +41,13 @@ class TodoList extends Component {
   deleteItem(item) {
     // delete the item through API
     // localhost:3001//api/v1/todos + /:id
-    let deleteURL = apiURL + `/${item.id}`;
+    const deleteURL = apiURL + `/${item.id}`;
     fetch(deleteURL, {
       method: 'DELETE'
     }).then(() => {
       // Client side delete
-      let currentItems = this.state.items;
-      let index = currentItems.indexOf(item);
+      const currentItems = this.state.items;
+      const index = currentItems.indexOf(item);
       currentItems.splice(index, 1);
       this.setState({
         items: currentItems
