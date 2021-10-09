@@ -24,7 +24,7 @@ class TodoList extends Component {
       .then(response => response.json())
       .then(responseItems => {
         this.setState({
-          items: responseItems.reverse()
+          items: responseItems
         });
       });
   };
