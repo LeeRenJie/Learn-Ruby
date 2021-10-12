@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import TodoForm from "./Todoform";
-import TodoItem from "./TodoItem";
+import TodoForm from "./Todoform"
+import TodoItem from "./TodoItem"
+import Grid from '@material-ui/core/Grid';
 
 const apiURL = 'http://localhost:3001/api/v1/todos/';
 
@@ -13,6 +14,7 @@ class TodoList extends Component {
     };
 
     this.updateTodoList = this.updateTodoList.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   };
 
   componentDidMount() {
@@ -36,21 +38,35 @@ class TodoList extends Component {
     });
   };
 
+  deleteItem(item) {
+    // delete the item through API
+    // localhost:3001//api/v1/todos + /:id
+    const deleteURL = apiURL + `/${item.id}`;
+    fetch(deleteURL, {
+      method: 'DELETE'
+    }).then(() => {
+      this.getTasks();
+    });
+  };
+
   render() {
     return (
-      <div>
-        <TodoForm apiURL={apiURL} updateTodoList={this.updateTodoList}/>
-        <ul id="todoList">
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <TodoForm apiURL={apiURL} updateTodoList={this.updateTodoList}/>
+        </Grid>
+        <Grid item xs={12} id="todoList">
           {
             this.state.items.map((item) => (
               <TodoItem
                 key={item.id}
                 item={item}
+                deleteItem={this.deleteItem}
               />
             ))
           }
-        </ul>
-      </div>
+        </Grid>
+      </Grid>
     );
   };
 };
