@@ -45,13 +45,7 @@ class TodoList extends Component {
     fetch(deleteURL, {
       method: 'DELETE'
     }).then(() => {
-      // Client side delete
-      const currentItems = this.state.items;
-      const index = currentItems.indexOf(item);
-      currentItems.splice(index, 1);
-      this.setState({
-        items: currentItems
-      });
+      this.getTasks();
     });
   };
 
