@@ -5,11 +5,11 @@ import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-const useStyles = theme => ({
+const useStyles = ({
   root: {
     padding: "2em",
-    height: "3em",
-    margin: "1em"
+    margin: "1em",
+    height: "auto"
   }
 });
 
@@ -30,6 +30,8 @@ class TodoItem extends Component {
         <Grid item xs={9}>
           <Paper elevation={3} className={classes.root}>
             {this.props.item.task}
+            <hr/>
+            {this.props.item.body}
             <hr/>
             <Button
               variant="contained"
