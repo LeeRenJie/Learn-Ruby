@@ -30,11 +30,15 @@ class TodoForm extends Component {
     };
     fetch(this.props.apiURL, obj)
       .then(res => res.json())
-      .then(resJson => this.props.updateTodoList(resJson));
-    this.setState({
-      task: "",
-      body: "",
-    });
+      .then(
+        (resJson) => {
+          this.props.updateTodoList(resJson);
+          this.setState({
+            task: "",
+            body: "",
+          });
+        }
+      );
   };
 
   handleTaskChange(event) {
