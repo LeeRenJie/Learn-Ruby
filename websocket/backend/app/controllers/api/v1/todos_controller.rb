@@ -6,7 +6,7 @@ class Api::V1::TodosController < ApplicationController
   def index
     @todos = Todo.all.reverse
 
-    render json: @todos, include: "**"
+    render json: @todos
   end
 
   # GET /todos/1 or /todos/1.json
