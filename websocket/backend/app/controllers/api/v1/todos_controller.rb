@@ -6,7 +6,7 @@ class Api::V1::TodosController < ApplicationController
   def index
     @todos = Todo.all.reverse
 
-    render json: @todos
+    render json: @todos, include: "**"
   end
 
   # GET /todos/1 or /todos/1.json
@@ -29,6 +29,7 @@ class Api::V1::TodosController < ApplicationController
 
     if @todo.save
       render json: @todo, status: :created, location: api_v1_todos_path(@todo)
+      ActionCable.server.broadcast 'todos_channel', @todo
     else
       render json: @todo.errors, status: :unprocessable_entity
     end
