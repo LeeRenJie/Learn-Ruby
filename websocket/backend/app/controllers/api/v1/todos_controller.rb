@@ -29,6 +29,7 @@ class Api::V1::TodosController < ApplicationController
 
     if @todo.save
       render json: @todo, status: :created, location: api_v1_todos_path(@todo)
+      ActionCable.server.broadcast 'todos_channel', @todo
     else
       render json: @todo.errors, status: :unprocessable_entity
     end
