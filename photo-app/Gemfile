@@ -33,8 +33,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
@@ -56,7 +54,7 @@ group :test do
   gem 'webdrivers'
 end
 
-group :production do
+group :production, :development do
   # Use Rails built-in asset pipeline
   gem 'pg'
 end
