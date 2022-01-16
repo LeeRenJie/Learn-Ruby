@@ -4,6 +4,5 @@ class TodosChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    raise NotImplementedError
   end
 end
