@@ -158,11 +158,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (6.1.4.4)
       actionpack (= 6.1.4.4)
       activesupport (= 6.1.4.4)
@@ -202,7 +197,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.2.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -254,11 +248,9 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
-  rails_12factor
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   twitter-bootstrap-rails
   tzinfo-data
