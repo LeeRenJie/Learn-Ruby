@@ -1,17 +1,16 @@
-development:
+default: &default
   adapter: postgresql
-  database: my_photoapp_development
   pool: 5
   timeout: 5000
+
+development:
+  <<: *default
+  database: my_photoapp_development
 
 test:
-  adapter: postgresql
+  <<: *default
   database: my_photoapp_test
-  pool: 5
-  timeout: 5000
 
 production:
-  adapter: postgresql
+  <<: *default
   database: my_photoapp_production
-  pool: 5
-  timeout: 5000
