@@ -68,4 +68,24 @@
   </div>
 <% end %>
 
+<script type="text/javascript">
+  var stripe = Stripe("<%= ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>");
+  var elements = stripe.elements();
+
+  var card = elements.create('card', {
+    'style': {
+      'base': {
+        'fontFamily': 'Arial, sans-serif',
+        'fontSize': '18px',
+        'color': '#C1C7CD',
+      },
+      'invalid': {
+        'color': 'red',
+      },
+    }
+  });
+
+  card.mount("#<%= :card %>");
+</script>
+
 <%= render 'devise/shared/links' %>
