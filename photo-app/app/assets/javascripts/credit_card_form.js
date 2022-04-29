@@ -1,12 +1,14 @@
-let show_error, submitHandler;
-
-show_error = function (message) {
-  console.log(message);
+const show_error = function (message) {
   if(!$("#flash-messages").length){
     $('#main').prepend("<div id='flash-messages'></div>");
   }
 
-  $("#flash-messages").html('<div class="alert alert-warning"><a class="close" data-dismiss="alert">×</a><div id="flash_alert">' + message + '</div></div>');
+  $("#flash-messages").html(`
+    <div class="alert alert-warning">
+      <a class="close" data-dismiss="alert" href="">×</a>
+      <div id="flash_alert">${message}</div>
+    </div>
+  `);
   $('.alert').delay(5000).fadeOut(3000);
 
   return false;
@@ -28,16 +30,15 @@ function createToken(form){
   });
 };
 
-submitHandler = function(event){
+const submitHandler = function(event){
   event.preventDefault();
-
-  var $form = $(event.target);
+  const $form = $(event.target);
   $form.find("input[type=submit]").prop("disabled", true);
 
   //If Stripe was initialized correctly this will create a token using the credit card info
   if(stripe){
     createToken($form);
-  }else{
+  } else {
     show_error("Failed to load credit card processing functionality. Please reload this page in your browser.");
   }
 };
