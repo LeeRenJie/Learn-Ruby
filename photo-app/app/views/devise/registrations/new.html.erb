@@ -25,7 +25,8 @@
 
   <div class="row">
     <div class="form-group col-md-6">
-      <div id="<%= :card %>"></div>
+      <label for="card">Card</label>
+      <div id="card"></div>
       <div id="card-errors"></div>
     </div>
   </div>
@@ -52,7 +53,7 @@
     }
   });
 
-  card.mount("#<%= :card %>");
+  card.mount("#card");
 </script>
 
 <%= render 'devise/shared/links' %>

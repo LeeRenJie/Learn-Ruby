@@ -1,9 +1,11 @@
-const show_error = function (message) {
-  if(!$("#flash-messages").length){
+const flashMessages = document.getElementById("flash-messages");
+
+const showError = function (message) {
+  if(!(flashMessages).length){
     $('#main').prepend("<div id='flash-messages'></div>");
   }
 
-  $("#flash-messages").html(`
+  flashMessages.html(`
     <div class="alert alert-warning">
       <a class="close" data-dismiss="alert" href="">×</a>
       <div id="flash_alert">${message}</div>
@@ -15,14 +17,14 @@ const show_error = function (message) {
 };
 
 function stripeTokenHandler(token, form){
-  form.append($("<input type=\"hidden\" name=\"payment[token]\" />").val(token.id));
+  form.append($('<input type="hidden" name="payment[token]" />').val(token.id));
   form.get(0).submit();
 };
 
 function createToken(form){
   stripe.createToken(card).then(function(result) {
     if(result.error){
-      show_error(result.error.message);
+      showError(result.error.message);
       form.find("input[type=submit]").prop("disabled", false);
     } else {
       stripeTokenHandler(result.token, form);
@@ -39,7 +41,7 @@ const submitHandler = function(event){
   if(stripe){
     createToken($form);
   } else {
-    show_error("Failed to load credit card processing functionality. Please reload this page in your browser.");
+    showError("Failed to load credit card processing functionality. Please reload this page in your browser.");
   }
 };
 
